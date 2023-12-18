@@ -63,7 +63,7 @@
       </span>
 
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Arshaka</b>Medika</span>
+      <span class="logo-lg"><b>JANGLET</b>RENTAL</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -174,15 +174,15 @@
         <li class="header">DATA</li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-stethoscope"></i> <span>Data Dokter</span>
+            <i class="fa fa-car"></i> <span>Data Mobil</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ route('listdatadokter') }}"><i class="fa fa-circle-o"></i> List Data Dokter</a></li>
+            <li><a href="{{ route('listdatadokter') }}"><i class="fa fa-circle-o"></i> List Data Mobil</a></li>
             {{-- <li><a href="{{ route('listspesialisasi') }}"><i class="fa fa-circle-o"></i>List Data Spesialisasi</a></li> --}}
-            <li><a href="{{ route('tambahdatadokter') }}"><i class="fa fa-circle-o"></i>Tambah Data Dokter</a></li>
+            <li><a href="{{ route('tambahdatadokter') }}"><i class="fa fa-circle-o"></i>Tambah Data Mobil</a></li>
           </ul>
         </li>
         <li class="treeview">

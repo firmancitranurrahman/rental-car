@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateKliniksTable extends Migration
+class CreateMobilsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateKliniksTable extends Migration
      */
     public function up()
     {
-        Schema::create('kliniks', function (Blueprint $table) {
+        Schema::create('mobils', function (Blueprint $table) {
             $table->id();
-            $table->string('no_registrasi_klinik');
-            $table->string('nama_klinik');
-            $table->string('alamat_klinik');
-            $table->string('no_telp_klinik');
-            
+            $table->string('merk')->nullable();
+            $table->string('model')->nullable();
+            $table->string('plat_nomor')->nullable();
+            $table->string('harga_sewa')->nullable();
+
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ class CreateKliniksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kliniks');
+        Schema::dropIfExists('mobils');
     }
 }

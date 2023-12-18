@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DokterController;
 use App\Http\Controllers\KlinikController;
+use App\Http\Controllers\MobilController;
 use App\Http\Controllers\PasienController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -35,6 +36,12 @@ Route::get('/listdatauser',[KlinikController::class,'listdatauser'])->name('list
 Route::get('/listdataklinik',[KlinikController::class,'listdataklinik'])->name('listdataklinik');
 Route::get('/tambahdataklinik',[KlinikController::class,'tambahdataklinik'])->name('tambahdataklinik');
 Route::post('/storeklinik',[KlinikController::class,'storeklinik'])->name('storeklinik');
+
+
+//==== MOBIL ==== //
+Route::get('/listdatamobil',[MobilController::class,'listdatamobil'])->name('listdatamobil');
+Route::get('/tambahdatamobil',[MobilController::class,'tambahdatamobil'])->name('tambahdatamobil');
+Route::post('/storemobil',[MobilController::class,'storemobil'])->name('storemobil');
 
 
 // ===== DOKTER ==== //

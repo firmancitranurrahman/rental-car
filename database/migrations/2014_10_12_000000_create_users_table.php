@@ -18,20 +18,12 @@ class CreateUsersTable extends Migration
             // ==== All Role ====  //
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('no_hp')->nullable();
-            $table->timestamp('email_verified_at')->nullable();
             $table->string('alamat')->nullable();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('sim')->nullable();       
+            $table->string('telepon')->nullable();
             $table->string('password')->nullable();
-            // === Role Dokter === //
-            $table->string('spesialisasi')->nullable();
-            // === Role Pasien === //
-            $table->string('umur',10)->nullable();
-            $table->string('golongan_darah')->nullable();
-            $table->string('no_kk')->nullable();
-            $table->string('tgl_lahir')->nullable();
-            $table->string('status_pernikahan')->nullable();
-            $table->string('pekerjaan')->nullable();
-            $table->string('asuransi')->nullable();
+
             $table->rememberToken();
             $table->timestamps();
         });
