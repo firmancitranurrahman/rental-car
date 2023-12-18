@@ -180,50 +180,38 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ route('listdatadokter') }}"><i class="fa fa-circle-o"></i> List Data Mobil</a></li>
+            <li><a href="{{ route('listdatamobil') }}"><i class="fa fa-circle-o"></i> List Data Mobil</a></li>
             {{-- <li><a href="{{ route('listspesialisasi') }}"><i class="fa fa-circle-o"></i>List Data Spesialisasi</a></li> --}}
-            <li><a href="{{ route('tambahdatadokter') }}"><i class="fa fa-circle-o"></i>Tambah Data Mobil</a></li>
+            <li><a href="{{ route('tambahdatamobil') }}"><i class="fa fa-circle-o"></i>Tambah Data Mobil</a></li>
           </ul>
         </li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-hospital-o"></i> <span>Data Klinik</span>
+            <i class="fa fa-user-o"></i> <span>Data Pengguna</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ 'listdataklinik' }}"><i class="fa fa-circle-o"></i> List Data Klinik</a></li>
-            <li><a href="{{ 'tambahdataklinik' }}"><i class="fa fa-circle-o"></i> Tambah Data Klinik</a></li>
+            <li><a href="{{ 'listdataklinik' }}"><i class="fa fa-circle-o"></i> List Data Pengguna</a></li>
+            <li><a href="{{ 'tambahdataklinik' }}"><i class="fa fa-circle-o"></i> Tambah Data Pengguna</a></li>
           </ul>
         </li>
+       
+        <li class="header">Penyewaan</li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-wheelchair"></i><span>Data Pasien</span>
+            <i class="fa fa-wheelchair"></i><span>Data Sewa</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/forms/editors.html"><i class="fa fa-circle-o"></i> List Data Pasien</a></li>
-            <li><a href="{{ 'tambahdatapasien' }}"><i class="fa fa-circle-o"></i> Tambah Data Pasien</a></li>
-          </ul>
-        </li>
-        <li class="header">Layanan</li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-wheelchair"></i><span>Data Pelayanan</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="{{ 'listdatapelayanan' }}"><i class="fa fa-circle-o"></i> List Data Pelyanan</a></li>
-            <li><a href="{{ 'registerpelayanan' }}"><i class="fa fa-circle-o"></i> <span>Register Pelayanan</span></a></li>
+            <li><a href="{{ 'listdatapelayanan' }}"><i class="fa fa-circle-o"></i> List Data Sewa</a></li>
+            <li><a href="{{ 'registerpelayanan' }}"><i class="fa fa-circle-o"></i> <span>Register Sewa</span></a></li>
           </ul>
         </li>
 
-        <li><a href="{{ 'jadwalpraktekdokter' }}"><i class="fa fa-calendar-times-o"></i><span>Atur Jadwal Praktek</span></a></li>
         <li class="header">LABELS</li>
         <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
         <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
@@ -488,124 +476,6 @@
 <script src="{{ 'assets' }}/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 <script>
   $(function () {
-    $('#example1')({
-      "language": {
-			           "emptyTable": "tidak ada datas"
-      }
-    });
-    // Sembunyikan pesan "Tidak ada data" saat halaman dimuat
-    $('#no-data-message').hide();
-
-    // Ketika tombol "Tambah Jadwal" ditekan
-    $('#tambah-kolom').on('click', function () {
-      // Sembunyikan pesan "Tidak ada data"
-      $('#no-data-message').hide();
-    });
-  })
-</script>
-
-<script>
-     document.getElementById('tambahjadwal').addEventListener('click', function () {
-      document.querySelector('.tambahjadwal').style.display = 'block';
-      // history.pushState({}, "", "/jadwalpraktekdokter/tambahjadwal");
-  });
-  document.getElementById('reload-halaman').addEventListener('click', function () {
-        // Melakukan reload halaman
-        location.reload();
-    });
-</script>
-
-<script>
-  document.getElementById('tambah-kolom').addEventListener('click', function () {
-      // Mengambil referensi ke tabel pada "Box Pertama"
-      // var tabelBoxPertama = document.getElementById('tabel-box-pertama').getElementsByTagName('tbody')[0];
-      
-      var tabelBoxPertama = document.getElementById('example1').getElementsByTagName('tbody')[0];
-
-      // Membuat baris baru
-      var barisBaru = document.createElement('tr');
-      var kolomHari = document.createElement('td');
-      var kolomNomer= document.createElement('td');
-      var kolomJamMasuk = document.createElement('td');
-      var kolomJamSelesai = document.createElement('td');
-      var kolomHapusJadwal = document.createElement('td');
-      // Menambahkan inputan ke dalam kolom
-      // kolomHari.innerHTML = '<input type="text" name="hari[]" class="form-control" />';
-      
-      
-        // Tambahkan input select untuk "Hari"
-        // var kolomHari = document.createElement('td');
-        
-        var selectHari = document.createElement('select');
-        selectHari.name = 'hari[]';
-        selectHari.className = 'form-control';
-        var hariOptions = ["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"];
-        for (var i = 0; i < hariOptions.length; i++) {
-            var option = document.createElement('option');
-            option.value = hariOptions[i];
-            option.text = hariOptions[i];
-            selectHari.appendChild(option);
-        }       
-
-      // kolomNomer.appendChild(rowCount);
-      kolomHari.appendChild(selectHari);
-      kolomJamMasuk.innerHTML = '<input type="time" name="jam_masuk[]" class="form-control" />';
-      kolomJamSelesai.innerHTML = '<input type="time" name="jam_selesai[]" class="form-control" />';
-      kolomHapusJadwal.innerHTML = '<button  name="jam_selesai[]" class="btn btn-danger"><i class="fa fa-trash"></i></button>';
-
-      // Menambahkan kolom-kolom ke dalam baris
-      barisBaru.appendChild(kolomHari);
-      barisBaru.appendChild(kolomJamMasuk);
-      barisBaru.appendChild(kolomJamSelesai);
-      barisBaru.appendChild(kolomHapusJadwal);
-
-      // Menambahkan baris baru ke dalam tabel
-      tabelBoxPertama.appendChild(barisBaru);
-  });
-</script>
-
-<script>
-  // Mendapatkan nilai waktu dari input
-  var inputWaktu = document.getElementById("waktu");
-
-  inputWaktu.addEventListener("change", function() {
-      var waktuTerpilih = inputWaktu.value;
-      console.log("Waktu yang dipilih: " + waktuTerpilih);
-  });
-</script>
-
-
-<script>
-      $(document).ready(function () {
-        $('#spesialisasi').change(function () {
-            var spesialisasiId = $(this).val();
-
-            // Kirim permintaan Ajax untuk mendapatkan data dokter
-            $.get('/dokter/' + spesialisasiId, function (data) {
-                var dokterSelect = $('#nama_dokter');
-                dokterSelect.empty(); // Kosongkan opsi nama dokter sebelum menambahkan yang baru
-
-                $.each(data, function (key, value) {
-                    dokterSelect.append($('<option>').text(value.nama).attr('value', value.id));
-                });
-            });
-        });
-    });
-</script>
-
-{{-- <script>
-  $(document).ready(function(){
-    var spesialisasi=$(this).val();
-
-    $.ajax({
-      type:'GET',
-      url:'/'
-    })
-  })
-</script> --}}
-
-<script>
-  $(function () {
     $('#example1').DataTable()
     $('#example2').DataTable({
       'paging'      : true,
@@ -617,71 +487,6 @@
     })
   })
 </script>
-
-<script>
-  $document.ready(function(){
-    $('tes').click(function(){
-      $('#result').show();
-    })
-  });
-</script>
-
-
-<script>
-    $(document).ready(function () {
-        $('#cek-nik').click(function () {
-            var nik = $('#nik').val();
-            if (nik.trim() === '') {
-              alert('Nik tidak di isi');
-              return
-            }
-
-            $.ajax({
-                type: 'POST',
-                url: '{{ route("ceknik") }}',
-                data: {
-                    '_token': '{{ csrf_token() }}',
-                    'nik': nik
-                },
-                success: function (data) {
-                    if (data.status) {
-                      $('#id').val(data.id).prop('readonly', true);
-                      $('#nama').val(data.nama).prop('readonly', true);
-                      $('#alamat').val(data.alamat).prop('readonly', true);
-                      var noRegister = generateNoRegister();
-                      $('#noRegister').val(noRegister).prop('readonly', true);
-                      $('#result').show();
-                    } else {
-                        alert('NIK tidak valid harap lakukan pendaftaran pasien!');
-                        
-                        location.reload();
-                    }
-                },
-                error: function (error) {
-                    console.log(error);
-                }
-            });
-        });
-        function generateNoRegister() {
-            // Mendapatkan tanggal saat ini
-            var currentDate = new Date();
-            var year = currentDate.getFullYear();
-            var month = ('0' + (currentDate.getMonth() + 1)).slice(-2);
-            var day = ('0' + currentDate.getDate()).slice(-2);
-
-            // Menghasilkan No Register dengan skema year month day
-            var noRegister = year + month + day;
-
-            return noRegister;
-        }
-      
-    });
-</script>
-
-
-
-
-
 
 </body>
 </html>

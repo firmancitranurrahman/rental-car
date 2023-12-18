@@ -7,8 +7,8 @@
           <small>Control panel</small>
         </h1>
         <ol class="breadcrumb">
-          <li><a href="#"><i class="fa fa-hospital"></i> Klinik</a></li>
-          <li class="active">List Data Klinik</li>
+          <li><a href="#"><i class="fa fa-user"></i> User</a></li>
+          <li class="active">List Data User</li>
         </ol>
       </section><br>
       <section class="content">
@@ -16,28 +16,29 @@
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title">List Data Klinik</h3>
+                        <h3 class="box-title">List Data User</h3>
                     </div>
                     <div class="box-body">
                         <table id="example2" class="table table-bordered table-hover">
                             <thead>
                                 <tr>
-                                <th>1</th>
-                                <th>1</th>
-                                <th>1</th>
+                                <th>No</th>
+                                <th>Name</th>
+                                <th>Sim</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php $nomor=1 ;?>
+                                @foreach ($user as $u)
                                 <tr>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
+                                    <td>{{ $nomor }}</td>
+                                    <td>{{ $u->name }}</td>
+                                    <td>{{ $u->sim }}</td>
                                 </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                </tr>
+                                <?php $nomor++ ;?>
+                                @endforeach
+
+                               
                             </tbody>
                         
                         </table>

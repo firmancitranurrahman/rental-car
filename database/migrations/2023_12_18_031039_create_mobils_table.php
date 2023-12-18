@@ -19,6 +19,8 @@ class CreateMobilsTable extends Migration
             $table->string('model')->nullable();
             $table->string('plat_nomor')->nullable();
             $table->string('harga_sewa')->nullable();
+            $table->string('status')->default('tersedia');
+
 
             $table->timestamps();
         });

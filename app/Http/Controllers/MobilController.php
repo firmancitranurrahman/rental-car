@@ -30,4 +30,8 @@ class MobilController extends Controller
         ]);
         return dd($mobil);
     }
+    public function listdatamobil(){
+        $mobil= Mobil::all();
+        return view('mobil.listdatamobil',['mobil'=>$mobil]);
+    }
 }

@@ -43,17 +43,6 @@ class UserSeeder extends Seeder
 
         $user = User::create([
             'name' => 'Buyono',
-            'email' => 'dokter@gmail.com',
-            // 'ip_address'=>'192.168.223.221',
-            // 'status'=>'actived',
-            // 'is_password_changed'=>'1',
-            'email_verified_at' => now(),
-            // 'kota' => Reffkota::all()->random()->id,
-            'password' => bcrypt('12345678'),
-        ]);
-        $user->assignRole('dokter');
-        $user = User::create([
-            'name' => 'Buyono',
             'email' => 'pasien@gmail.com',
             // 'ip_address'=>'192.168.223.221',
             // 'status'=>'actived',
@@ -63,7 +52,7 @@ class UserSeeder extends Seeder
 
             'password' => bcrypt('12345678'),
         ]);
-        $user->assignRole('pasien');
+        $user->assignRole('user');
 
 
     }

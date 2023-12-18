@@ -14,7 +14,8 @@ class Mobil extends Model
         'merk',
         'model',
         'harga_sewa',
-        'plat_nomor',  
+        'plat_nomor',
+        'status'  
     ];
 
 }

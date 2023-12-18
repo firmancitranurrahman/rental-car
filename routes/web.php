@@ -27,49 +27,15 @@ Route::get('/', function () {
 Route::get('/index',[UserController::class,'index'])->name('index');
 
 // ===== USER ===== //
-Route::get('/listdatauser',[KlinikController::class,'listdatauser'])->name('listdatauser');
-
-// ==== SPESIALISASI ==== //
-
-
-// ==== KLINIK ==== //
-Route::get('/listdataklinik',[KlinikController::class,'listdataklinik'])->name('listdataklinik');
-Route::get('/tambahdataklinik',[KlinikController::class,'tambahdataklinik'])->name('tambahdataklinik');
-Route::post('/storeklinik',[KlinikController::class,'storeklinik'])->name('storeklinik');
+Route::get('/tambahdatauser',[UserController::class,'tambahdatauser'])->name('tambahdatauser');
+Route::get('/listdatauser',[UserController::class,'listdatauser'])->name('listdatauser');
+Route::post('/storeuser',[UserController::class,'storeuser'])->name('storeuser');
 
 
 //==== MOBIL ==== //
 Route::get('/listdatamobil',[MobilController::class,'listdatamobil'])->name('listdatamobil');
 Route::get('/tambahdatamobil',[MobilController::class,'tambahdatamobil'])->name('tambahdatamobil');
 Route::post('/storemobil',[MobilController::class,'storemobil'])->name('storemobil');
-
-
-// ===== DOKTER ==== //
-Route::get('/listdatadokter',[DokterController::class,'listdatadokter'])->name('listdatadokter');
-Route::get('/tambahdatadokter',[DokterController::class,'tambahdatadokter'])->name('tambahdatadokter');
-Route::post('/storedokter',[DokterController::class,'storedokter'])->name('storedokter');
-
-// Route::post('/storedokter',[UserController::class,'storedokter'])->name('storedokter');
-Route::get('/jadwalpraktekdokter',[DokterController::class,'jadwalpraktekdokter'])->name('jadwalpraktekdokter');
-Route::get('/jadwalpraktekdokter/tambahjadwal',[DokterController::class,'jadwalpraktekdokter'])->name('tambahjadwal');
-
-// === PASIEN === //
-Route::get('/listdatapasien',[PasienController::class,'listdatapasien'])->name('listdatapasien');
-Route::get('/tambahdatapasien',[PasienController::class,'tambahdatapasien'])->name('tambahdatapasien');
-
-Route::post('/storepasien',[PasienController::class,'storepasien'])->name('storepasien');
-
-Route::get('/registerpelayanan', [PasienController::class,'registerpelayanan'])->name('registerpelayanan');
-
-Route::get('/dokter/{id}', [DokterController::class,'cekombak'])->name('cekombak');
-
-
-Route::post('/ceknik', [PasienController::class, 'ceknik'])->name('ceknik');
-Route::post('/ceknik2', [PasienController::class, 'ceknik2'])->name('ceknik2');
-
-Route::post('/prosespelayanan', [PasienController::class, 'prosespelayanan'])->name('prosespelayanan');
-Route::get('/listdatapelayanan', [PasienController::class,'listdatapelayanan'])->name('listdatapelayanan');
-
 
 
 // Route::post('/ceknik', [PasienController::class,'ceknik'])->name('ceknik');

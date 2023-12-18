@@ -50,7 +50,7 @@
                                 <div class="col-md-7">
                                     <div class="form-group">
                                         <label for="nama">Harga Sewa</label>
-                                        <input type="text" class="form-control" name="plat_nomor">
+                                        <input type="text" class="form-control" name="harga_sewa">
                                     </div>
                                 </div>        
                                             
