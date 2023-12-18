@@ -1,12 +1,11 @@
 <?php
 
-use App\Http\Controllers\DokterController;
-use App\Http\Controllers\KlinikController;
 use App\Http\Controllers\MobilController;
-use App\Http\Controllers\PasienController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+
+use App\Http\Controllers\RolePermissionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +35,12 @@ Route::post('/storeuser',[UserController::class,'storeuser'])->name('storeuser')
 Route::get('/listdatamobil',[MobilController::class,'listdatamobil'])->name('listdatamobil');
 Route::get('/tambahdatamobil',[MobilController::class,'tambahdatamobil'])->name('tambahdatamobil');
 Route::post('/storemobil',[MobilController::class,'storemobil'])->name('storemobil');
+
+//==== SEWA ==== //
+Route::middleware(['auth','role:user'])->group(function(){
+    
+});
+
 
 
 // Route::post('/ceknik', [PasienController::class,'ceknik'])->name('ceknik');

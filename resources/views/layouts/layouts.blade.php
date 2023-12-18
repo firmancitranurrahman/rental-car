@@ -181,6 +181,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="{{ route('listdatamobil') }}"><i class="fa fa-circle-o"></i> List Data Mobil</a></li>
+            
             {{-- <li><a href="{{ route('listspesialisasi') }}"><i class="fa fa-circle-o"></i>List Data Spesialisasi</a></li> --}}
             <li><a href="{{ route('tambahdatamobil') }}"><i class="fa fa-circle-o"></i>Tambah Data Mobil</a></li>
           </ul>

@@ -20,7 +20,6 @@
                     </div>
                     <div class="box-body">
                         <table id="example1" class="table table-bordered table-striped">
-
                             <thead>
                                 <tr>
                                     <th>No</th>
@@ -29,6 +28,9 @@
                                     <th>Plat Nomor</th>
                                     <th>Harga Sewa</th>
                                     <th>Status</th>
+                                    @role('user')
+                                    <th>Ajukan</th>
+                                    @endrole
                                 </tr>
                             </thead>
                             <tbody>
@@ -41,6 +43,10 @@
                                     <td>{{$mob->plat_nomor  }}</td>
                                     <td>{{ $mob->harga_sewa }}</td>
                                     <td>{{ $mob->status}}</td>
+                                    <td>
+                                        <button> Sewa</button>
+                                    </td>
+
                                 </tr>
                                 <?php $nomer++ ;?>
                                 @endforeach
